@@ -1,2 +1,2 @@
 # Read-Al-Qur-an
-Read Al-Qur'an - Project to quran.viiproject.my.id
+Read Al-Qur'an - quran.abdwasidev.my.id
