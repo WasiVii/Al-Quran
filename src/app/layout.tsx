@@ -1,3 +1,4 @@
+import Script from 'next/script'
 import { type Metadata } from 'next/types'
 
 import { siteMeta } from '@/config'
@@ -5,11 +6,14 @@ import { TRPCReactProvider } from '@/trpc/react'
 import { fontInter, fontMono } from '@/utils/fontloader'
 import { cn } from '@/utils/helpers'
 
+import Footer from './_components/footer'
+import Header from './_components/header'
+
 import '@/assets/styles/globals.css'
 
 export const metadata: Metadata = {
   title: {
-    default: siteMeta.title,
+    default: 'Home' + ' - ' + siteMeta.title,
     template: `%s - ${siteMeta.title}`,
   },
   applicationName: siteMeta.title,
@@ -45,8 +49,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang='en' className={cn(fontInter.className, fontMono.variable)}>
       <body className={cn(isDevelopment && 'debug-screens')} suppressHydrationWarning={true}>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+        <TRPCReactProvider>
+          <div className='bg-white lg:pb-12'>
+            <div className='mx-auto max-w-screen-xl px-5'>
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </div>
+        </TRPCReactProvider>
       </body>
+      <Script
+        type='text/javascript'
+        defer
+        src='https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js'
+        data-preload
+      ></Script>
     </html>
   )
 }

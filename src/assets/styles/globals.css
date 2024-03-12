@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.icon-bg {
+  background: radial-gradient(black, transparent 60%);
+  transform: rotate3d(0, 0, 1, 20deg) scale3d(1, 0.6, 1);
+  opacity: 0.2;
+}
+
+.svg-icon {
+  transform: scale(1.5);
+  opacity: 0.1;
+}

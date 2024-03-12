@@ -1,18 +1,13 @@
-// "use client";
-import Script from 'next/script'
+'use client'
 
-import Home from './home'
+import Hero from '../_components/hero'
+import Menu from '../_components/menu'
 
-export default function Page() {
+export default function HomePage() {
   return (
     <>
-      <Home />
-      <Script
-        type='text/javascript'
-        defer
-        src='https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js'
-        data-preload
-      ></Script>
+      <Hero />
+      <Menu />
     </>
   )
 }

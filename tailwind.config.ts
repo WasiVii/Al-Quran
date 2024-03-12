@@ -20,6 +20,7 @@ export default {
         cream: '#FFF3DA',
         sky: '#83A2FF',
         sky2: '#687EFF',
+        main: '#4ade80',
       },
     },
     debugScreens: {
